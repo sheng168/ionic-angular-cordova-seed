@@ -1,5 +1,11 @@
 angular.module('starter.services', [])
 
+.factory('DeviceService', function($firebase, fbURL) {
+    // Might use a resource here that returns a JSON array
+
+    return $firebase(new Firebase(fbURL))
+})
+
 /**
  * A simple example service that returns some data.
  */

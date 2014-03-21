@@ -3,14 +3,14 @@
   It was wired up in the app config (app.js) 
   The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<ion-view title="Pet Information">
+<ion-view title="Device List">
   <ion-content has-header="true" has-tabs="true">
 
     <ion-list>
 
-      <ion-item ng-repeat="pet in pets" type="item-text-wrap" href="#/tab/pet/{{pet.id}}">
-        <h3>{{pet.title}}</h3>
-        <p>{{pet.description}}</p>
+      <ion-item ng-repeat="pet in pets" type="item-text-wrap" href="#/tab/pet/{{pet.objectId}}">
+        <h3>{{pet.name}}</h3>
+        <p>{{pet.battery*100|number:0}}% {{pet.live?'Online':'Offline'}}</p>
       </ion-item>
       
     </ion-list>

@@ -5,8 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', 'firebase'])
 
+.value('fbURL', 'https://find-cuh0fcgnzu.firebaseio-demo.com/User/cuH0FCgNzU/Install/')
 
 .config(function($stateProvider, $urlRouterProvider) {
 
