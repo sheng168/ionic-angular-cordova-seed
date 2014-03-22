@@ -53,6 +53,31 @@ angular.module('starter.controllers', [])
 //        $scope.pet.$save();
 //        $location.path('/');
     };
-    // "Pets" is a service returning mock data (services.js)
+
+        $scope.map = {
+            marker: {
+                latitude: 40,
+                longitude: -73,
+                radius: 21
+            },
+            center: {
+                latitude: 40,
+                longitude: -73
+            },
+            zoom: 17
+        };
+
+        $scope.pet.$on('loaded', function(ref) {
+            $scope.map.center = angular.copy($scope.pet.location);
+            $scope.map.marker = $scope.pet.location;
+            $scope.$apply();
+        });
+
+        $scope.pet.$on('change', function(ref) {
+            $scope.map.marker = $scope.pet.location;
+            $scope.$apply();
+        });
+
+        // "Pets" is a service returning mock data (services.js)
     //$scope.pet = PetService.get($stateParams.petId);
 });

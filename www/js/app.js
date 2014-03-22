@@ -7,7 +7,7 @@ Parse.initialize("CVKBJuIraBLT7fKeyFGWoPGWHeycTj6TSImraONF", "fxHHcIw6MiSfi9bjS2
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', 'firebase'])
+angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', 'firebase', 'google-maps'])
 
 .value('fbURL', 'https://find-userId.firebaseio-demo.com/User/userId/Install/')
 

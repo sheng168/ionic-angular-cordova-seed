@@ -9,8 +9,12 @@
     <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/pets">Go Back</a></p>
       <p>{{ pet.speak }}</p>
       <button ng-click="ring()" class="button button-positive button-block">Ring</button>
-      <button ng-click="map()" class="button button-positive button-block">Map</button>
+      <button ng-show="false" ng-click="map()" class="button button-positive button-block">Map</button>
 
       <p>Location {{pet.location.radius | number}} meters of {{pet.location.latitude | number:3}},{{pet.location.longitude | number:3}} </p>
+
+      <google-map center="map.center" zoom="map.zoom" draggable="true">
+          <marker coords="map.marker"></marker>
+      </google-map>
   </ion-content>
 </ion-view>
