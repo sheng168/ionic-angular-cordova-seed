@@ -6,14 +6,18 @@
     <div class="list list-inset">
       <label class="item item-input">
         <span class="input-label">Your email</span>
-        <input type="email">
+        <input ng-model="user.username" type="email">
       </label>
       <label class="item item-input">
         <span class="input-label">Your password</span>
-        <input type="password">
+        <input ng-model="user.password" type="password">
       </label>
-      <ion-toggle>Subscribe To Newsletter</ion-toggle>
-      <button class="button button-positive button-block">Login</button>
+      <label class="item item-input">
+        <span class="input-label">{{currentUser.username}} </span>
+      </label>
+      <ion-toggle>Have you rated the app?</ion-toggle>
+      <button ng-click="logIn(user)" ng-hide="currentUser" class="button button-positive button-block">Login</button>
+      <button ng-click="logOut(user)" ng-show="currentUser" class="button button-positive button-block">Logout</button>
     </div>
   </ion-content>
 </ion-view>
