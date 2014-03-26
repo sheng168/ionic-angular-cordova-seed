@@ -6,8 +6,8 @@
 -->
 <ion-view title="{{pet.name}}">
   <ion-content has-header="true" padding="true">
-    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/pets">Go Back</a></p>
-      <p>{{ pet.speak }}</p>
+    <p><a ng-hide="true" class="button button-small icon ion-arrow-left-b" href="#/tab/pets">Go Back</a></p>
+      <p>Status {{ pet.speak }}</p>
       <button ng-click="ring()" class="button button-positive button-block">Ring</button>
       <button ng-show="false" ng-click="map()" class="button button-positive button-block">Map</button>
 

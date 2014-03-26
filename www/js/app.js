@@ -11,7 +11,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
 
 .value('fbURL', 'https://find-userId.firebaseio-demo.com/User/userId/Install/')
 
-.run(['$rootScope', function($scope) {
+.run(['$rootScope', function($scope, $location) {
     $scope.scenario = 'Sign up';
     $scope.currentUser = Parse.User.current();
 
@@ -37,7 +37,9 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
             success: function(user) {
                 $scope.currentUser = user;
                 $scope.$apply();
-                //alert("Success: " + user.id);
+
+                alert("Login as " + user.get('username') + ". Click Devices tab on bottom right to see yours.");
+//                $location.path('/tab/pets'); // $location is undefined for some reason
             },
             error: function(user, error) {
                 alert("Unable to log in: " + error.code + " " + error.message);

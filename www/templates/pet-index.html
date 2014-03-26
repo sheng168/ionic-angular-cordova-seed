@@ -5,10 +5,16 @@
 -->
 <ion-view title="Device List {{currentUser ?currentUser.get('username'):'- Please login'}}">
   <ion-content has-header="true" has-tabs="true">
+    <p>
+        Sort by:
+        <select type='text' ng-model="order">
+            <option ng-repeat="c in ['battery','live','name']">{{c}}</option>
+        </select>
 
+    </p>
     <ion-list>
 
-      <ion-item ng-repeat="pet in pets | orderBy:'name'" type="item-text-wrap" href="#/tab/pet/{{pet.objectId}}">
+      <ion-item ng-repeat="pet in pets | orderByPriority | orderBy:order" type="item-text-wrap" href="#/tab/pet/{{pet.objectId}}">
         <h3>{{pet.name}}</h3>
         <p>{{pet.battery*100|number:0}}% {{pet.live?'Online':'Offline'}}</p>
       </ion-item>
